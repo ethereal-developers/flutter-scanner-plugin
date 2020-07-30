@@ -7,8 +7,12 @@ class FlutterScannerCropper {
       const MethodChannel('flutter_scanner_cropper');
 
   static Future<String> get platformVersion async {
-    final String methodName = "willThisMethodCallWork";
-    final String version = await _channel.invokeMethod(methodName);
+    final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
+  }
+
+  Future<String> testMethod() async {
+    final String res = await _channel.invokeMethod('testMethod');
+    return res;
   }
 }

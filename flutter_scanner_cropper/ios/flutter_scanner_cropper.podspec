@@ -5,9 +5,9 @@
 Pod::Spec.new do |s|
   s.name             = 'flutter_scanner_cropper'
   s.version          = '0.0.1'
-  s.summary          = 'Custom plugin for OpenScan'
+  s.summary          = 'Custom scanner and cropper plugin for the OpenScan app.'
   s.description      = <<-DESC
-Custom plugin for OpenScan
+Custom scanner and cropper plugin for the OpenScan app.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

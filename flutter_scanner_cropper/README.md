@@ -1,6 +1,6 @@
 # flutter_scanner_cropper
 
-Custom plugin for OpenScan
+Custom scanner and cropper plugin for the OpenScan app.
 
 ## Getting Started
 

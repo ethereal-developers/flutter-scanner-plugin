@@ -2,8 +2,6 @@ package com.ethereal.flutter_scanner_cropper;
 
 import androidx.annotation.NonNull;
 
-import android.app.Activity;
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -46,8 +44,8 @@ public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHan
     } else {
       result.notImplemented();
     }
-    if (call.method.equals("willThisMethodCallWork")) {
-      result.success("Yay! We created the pathway for Native API calls!");
+    if (call.method.equals("testMethod")) {
+      result.success("This is a test method!");
     } else {
       result.notImplemented();
     }

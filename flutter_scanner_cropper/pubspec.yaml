@@ -1,5 +1,5 @@
 name: flutter_scanner_cropper
-description: Custom plugin for OpenScan
+description: Custom scanner and cropper plugin for the OpenScan app.
 version: 0.0.1
 author:
 homepage:

@@ -49,10 +49,6 @@ android {
     }
 }
 
-dependencies {
-    implementation project(path: ':scanlibrary')
-}
-
 flutter {
     source '../..'
 }
