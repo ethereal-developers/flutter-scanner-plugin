@@ -11,7 +11,7 @@ class FlutterScannerCropper {
     return version;
   }
 
-  Future<String> testMethod() async {
+  static Future<String> get testMethod async {
     final String res = await _channel.invokeMethod('testMethod');
     return res;
   }

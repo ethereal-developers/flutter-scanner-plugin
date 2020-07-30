@@ -28,6 +28,8 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await FlutterScannerCropper.platformVersion;
+      String willItWork = await FlutterScannerCropper.testMethod;
+      print('Testing whether it will work: $willItWork');
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -42,12 +44,6 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  Future<void> getThing() async {
-    String willItWork;
-    willItWork = await FlutterScannerCropper().testMethod();
-    print(willItWork);
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,13 +56,6 @@ class _MyAppState extends State<MyApp> {
             Center(
                   child: Text('Running on: $_platformVersion\n'),
                 ),
-            FlatButton(
-              child: Text('Click to print test method'),
-              onPressed: () {
-                getThing();
-                },
-              color: Colors.blueAccent,
-            ),
           ],
         ),
         ),

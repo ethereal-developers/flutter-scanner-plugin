@@ -41,11 +41,8 @@ public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHan
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else {
-      result.notImplemented();
-    }
-    if (call.method.equals("testMethod")) {
-      result.success("This is a test method!");
+    } else if (call.method.equals("testMethod")) {
+      result.success("Successfully called test method!");
     } else {
       result.notImplemented();
     }
