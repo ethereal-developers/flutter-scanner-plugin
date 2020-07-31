@@ -1,135 +1,64 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:io';
 
-import 'package:image_cropper/image_cropper.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_scanner_cropper/flutter_scanner_cropper.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  runApp(MyApp());
+}
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ImageCropper',
-      theme: ThemeData.light().copyWith(primaryColor: Colors.deepOrange),
-      home: MyHomePage(
-        title: 'ImageCropper',
-      ),
-    );
-  }
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyHomePage extends StatefulWidget {
-  final String title;
-
-  MyHomePage({this.title});
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-enum AppState {
-  free,
-  picked,
-  cropped,
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  AppState state;
-  File imageFile;
+class _MyAppState extends State<MyApp> {
+  String _platformVersion = 'Unknown';
 
   @override
   void initState() {
     super.initState();
-    state = AppState.free;
+    initPlatformState();
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {
+    String platformVersion;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      platformVersion = await FlutterScannerCropper.platformVersion;
+      String willItWork = await FlutterScannerCropper.testMethod;
+      print('Testing whether it will work: $willItWork');
+    } on PlatformException {
+      platformVersion = 'Failed to get platform version.';
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+
+    setState(() {
+      _platformVersion = platformVersion;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: imageFile != null ? Image.file(imageFile) : Container(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepOrange,
-        onPressed: () {
-          if (state == AppState.free)
-            _pickImage();
-          else if (state == AppState.picked)
-            _cropImage();
-          else if (state == AppState.cropped) _clearImage();
-        },
-        child: _buildButtonIcon(),
-      ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Center(
+                  child: Text('Running on: $_platformVersion\n'),
+                ),
+          ],
+        ),
+        ),
     );
-  }
-
-  Widget _buildButtonIcon() {
-    if (state == AppState.free)
-      return Icon(Icons.add);
-    else if (state == AppState.picked)
-      return Icon(Icons.crop);
-    else if (state == AppState.cropped)
-      return Icon(Icons.clear);
-    else
-      return Container();
-  }
-
-  Future<Null> _pickImage() async {
-    imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
-    if (imageFile != null) {
-      setState(() {
-        state = AppState.picked;
-      });
-    }
-  }
-
-  Future<Null> _cropImage() async {
-    File croppedFile = await ImageCropper.cropImage(
-        sourcePath: imageFile.path,
-        aspectRatioPresets: Platform.isAndroid
-            ? [
-                CropAspectRatioPreset.square,
-                CropAspectRatioPreset.ratio3x2,
-                CropAspectRatioPreset.original,
-                CropAspectRatioPreset.ratio4x3,
-                CropAspectRatioPreset.ratio16x9
-              ]
-            : [
-                CropAspectRatioPreset.original,
-                CropAspectRatioPreset.square,
-                CropAspectRatioPreset.ratio3x2,
-                CropAspectRatioPreset.ratio4x3,
-                CropAspectRatioPreset.ratio5x3,
-                CropAspectRatioPreset.ratio5x4,
-                CropAspectRatioPreset.ratio7x5,
-                CropAspectRatioPreset.ratio16x9
-              ],
-        androidUiSettings: AndroidUiSettings(
-            toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
-            toolbarWidgetColor: Colors.white,
-            initAspectRatio: CropAspectRatioPreset.original,
-            lockAspectRatio: false),
-        iosUiSettings: IOSUiSettings(
-          title: 'Cropper',
-        ));
-    if (croppedFile != null) {
-      imageFile = croppedFile;
-      setState(() {
-        state = AppState.cropped;
-      });
-    }
-  }
-
-  void _clearImage() {
-    imageFile = null;
-    setState(() {
-      state = AppState.free;
-    });
   }
 }

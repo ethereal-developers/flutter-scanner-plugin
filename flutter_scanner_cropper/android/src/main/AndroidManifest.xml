@@ -1,3 +1,3 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="vn.hunghd.flutter.plugins.imagecropper">
+  package="com.ethereal.flutter_scanner_cropper">
 </manifest>
