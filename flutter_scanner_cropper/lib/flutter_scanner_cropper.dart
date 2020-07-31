@@ -15,4 +15,9 @@ class FlutterScannerCropper {
     final String res = await _channel.invokeMethod('testMethod');
     return res;
   }
+
+  static Future<String> openCrop() async {
+    final String res = await _channel.invokeMethod('startCamera');
+    return res;
+  }
 }

@@ -54,8 +54,15 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: <Widget>[
             Center(
-                  child: Text('Running on: $_platformVersion\n'),
-                ),
+              child: Text('Running on: $_platformVersion\n'),
+            ),
+            RaisedButton(
+              child: Text('Crop'),
+              onPressed: () async {
+                String some = await FlutterScannerCropper.openCrop();
+                print(some);
+              },
+            ),
           ],
         ),
         ),

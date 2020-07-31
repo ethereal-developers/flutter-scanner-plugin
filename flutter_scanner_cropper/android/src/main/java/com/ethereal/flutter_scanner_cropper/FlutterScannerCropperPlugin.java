@@ -1,8 +1,22 @@
 package com.ethereal.flutter_scanner_cropper;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 
+import com.scanlibrary.ScanActivity;
+import com.scanlibrary.ScanConstants;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -10,7 +24,7 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** FlutterScannerCropperPlugin */
-public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHandler {
+public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -35,6 +49,11 @@ public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHan
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_scanner_cropper");
     channel.setMethodCallHandler(new FlutterScannerCropperPlugin());
+
+    FlutterScannerCropperPlugin plugin = new FlutterScannerCropperPlugin();
+
+    ScannerCropperDelegate delegate = plugin.setupActivity(registrar.activity());
+    registrar.addActivityResultListener(delegate);
   }
 
   @Override
@@ -43,13 +62,51 @@ public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHan
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("testMethod")) {
       result.success("Successfully called test method!");
+    } else if (call.method.equals("startCamera")) {
+      delegate.openCamera(result);
     } else {
       result.notImplemented();
     }
   }
 
+//  -----------------------------------
+
+  private ScannerCropperDelegate delegate;
+  private ActivityPluginBinding binding;
+
+//  -----------------------------------
+
+  public ScannerCropperDelegate setupActivity(Activity activity) {
+    delegate = new ScannerCropperDelegate(activity);
+    return delegate;
+  }
+
   @Override
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
     channel.setMethodCallHandler(null);
+  }
+
+  @Override
+  public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+    setupActivity(binding.getActivity());
+    this.binding = binding;
+    binding.addActivityResultListener(delegate);
+  }
+
+  @Override
+  public void onDetachedFromActivityForConfigChanges() {
+    onDetachedFromActivity();
+  }
+
+  @Override
+  public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
+    onAttachedToActivity(binding);
+  }
+
+  @Override
+  public void onDetachedFromActivity() {
+    binding.removeActivityResultListener(delegate);
+    binding = null;
+    delegate = null;
   }
 }
