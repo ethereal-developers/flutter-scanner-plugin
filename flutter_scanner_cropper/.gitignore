@@ -3,5 +3,12 @@
 
 .packages
 .pub/
+pubspec.lock
+.idea
 
 build/
+flutter_export_environment.sh
+
+######################
+.idea/
+*.iml

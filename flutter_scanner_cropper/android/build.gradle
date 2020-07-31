@@ -1,14 +1,15 @@
-group 'com.ethereal.flutter_scanner_cropper'
-version '1.0'
+group 'vn.hunghd.flutter.plugins.imagecropper'
+version '1.0-SNAPSHOT'
 
 buildscript {
     repositories {
         google()
         jcenter()
+        maven { url "https://www.jitpack.io" }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:3.6.3'
     }
 }
 
@@ -16,6 +17,7 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://www.jitpack.io" }
     }
 }
 
@@ -26,13 +28,12 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 28
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
         disable 'InvalidPackage'
     }
-}
-
-dependencies {
-    implementation project(path: ':scanlibrary')
+    dependencies {
+        implementation 'com.github.yalantis:ucrop:2.2.5'
+    }
 }
