@@ -13,13 +13,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.flutter.app.FlutterActivity;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry;
 
 public class ScannerCropperDelegate implements PluginRegistry.ActivityResultListener {
     private static final int REQUEST_CODE = 99;
     private final Activity activity;
-    private List<Uri> scannedBitmaps = new ArrayList<>();
+//    private List<Uri> scannedBitmaps = new ArrayList<>();
     private MethodChannel.Result pendingResult;
     private FileUtils fileUtils;
 
@@ -29,7 +30,7 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
     }
 
     public void openCamera(MethodChannel.Result result){
-        scannedBitmaps.clear();
+//        scannedBitmaps.clear();
 
         this.pendingResult = result;
 

@@ -1,19 +1,27 @@
 package com.ethereal.flutter_scanner_cropper;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.scanlibrary.ScanActivity;
 import com.scanlibrary.ScanConstants;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import io.flutter.app.FlutterActivity;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
@@ -23,8 +31,10 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
+import static androidx.core.app.ActivityCompat.requestPermissions;
+
 /** FlutterScannerCropperPlugin */
-public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
+public class FlutterScannerCropperPlugin extends FlutterActivity implements FlutterPlugin, MethodCallHandler, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -91,6 +101,7 @@ public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHan
     setupActivity(binding.getActivity());
     this.binding = binding;
     binding.addActivityResultListener(delegate);
+//    checkPermission();
   }
 
   @Override
@@ -105,8 +116,6 @@ public class FlutterScannerCropperPlugin implements FlutterPlugin, MethodCallHan
 
   @Override
   public void onDetachedFromActivity() {
-    binding.removeActivityResultListener(delegate);
-    binding = null;
-    delegate = null;
+//    TODO: complete this
   }
 }
