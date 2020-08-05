@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.RectF;
@@ -78,20 +79,13 @@ public class ScanFragment extends Fragment {
     }
 
     private Bitmap getBitmap() {
-        Uri uri = getUri();
-        try {
-            Bitmap bitmap = Utils.getBitmap(getActivity(), uri);
-            getActivity().getContentResolver().delete(uri, null, null);
-            return bitmap;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        Bitmap bitmap = BitmapFactory.decodeFile(getPath());
+        return bitmap;
     }
 
-    private Uri getUri() {
-        Uri uri = getArguments().getParcelable(ScanConstants.SELECTED_BITMAP);
-        return uri;
+    private String getPath() {
+        String path = getArguments().getString(ScanConstants.SELECTED_BITMAP);
+        return path;
     }
 
     private void setBitmap(Bitmap original) {
@@ -192,7 +186,7 @@ public class ScanFragment extends Fragment {
         float y2 = (points.get(1).y) * yRatio;
         float y3 = (points.get(2).y) * yRatio;
         float y4 = (points.get(3).y) * yRatio;
-        Log.d("", "POints(" + x1 + "," + y1 + ")(" + x2 + "," + y2 + ")(" + x3 + "," + y3 + ")(" + x4 + "," + y4 + ")");
+        Log.d("", "Points(" + x1 + "," + y1 + ")(" + x2 + "," + y2 + ")(" + x3 + "," + y3 + ")(" + x4 + "," + y4 + ")");
         Bitmap _bitmap = ((ScanActivity) getActivity()).getScannedBitmap(original, x1, y1, x2, y2, x3, y3, x4, y4);
         return _bitmap;
     }

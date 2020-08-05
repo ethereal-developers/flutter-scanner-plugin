@@ -7,6 +7,7 @@ import android.content.ComponentCallbacks2;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * Created by jhansi on 28/03/15.
@@ -21,9 +22,9 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
     }
 
     private void init() {
-        PickImageFragment fragment = new PickImageFragment();
+        ScanFragment fragment = new ScanFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt(ScanConstants.OPEN_INTENT_PREFERENCE, getPreferenceContent());
+        bundle.putString(ScanConstants.SELECTED_BITMAP, getImagePath());
         fragment.setArguments(bundle);
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -31,8 +32,9 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
         fragmentTransaction.commit();
     }
 
-    protected int getPreferenceContent() {
-        return getIntent().getIntExtra(ScanConstants.OPEN_INTENT_PREFERENCE, 0);
+    private String getImagePath() {
+        String path = getIntent().getStringExtra("ImagePath");
+        return path;
     }
 
     @Override
@@ -44,7 +46,6 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.content, fragment);
-        fragmentTransaction.addToBackStack(ScanFragment.class.toString());
         fragmentTransaction.commit();
     }
 

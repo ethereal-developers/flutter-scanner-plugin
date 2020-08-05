@@ -6,6 +6,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -75,7 +76,9 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
       String path = getApplicationContext().getCacheDir().getPath();
       result.success(path);
     } else if (call.method.equals("startCamera")) {
-        delegate.openCamera(result);
+        String imagePath = call.argument("path");
+        Log.d("onMethodCall", imagePath);
+        delegate.openCamera(result, imagePath);
     } else {
       result.notImplemented();
     }
