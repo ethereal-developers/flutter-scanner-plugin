@@ -1,6 +1,7 @@
 package com.ethereal.flutter_scanner_cropper;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.flutter.Log;
 import io.flutter.app.FlutterActivity;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry;
@@ -20,7 +22,6 @@ import io.flutter.plugin.common.PluginRegistry;
 public class ScannerCropperDelegate implements PluginRegistry.ActivityResultListener {
     private static final int REQUEST_CODE = 99;
     private final Activity activity;
-//    private List<Uri> scannedBitmaps = new ArrayList<>();
     private MethodChannel.Result pendingResult;
     private FileUtils fileUtils;
 
@@ -29,13 +30,14 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
         fileUtils = new FileUtils();
     }
 
-    public void openCamera(MethodChannel.Result result){
-//        scannedBitmaps.clear();
-
+    public void openCamera(MethodChannel.Result result) {
         this.pendingResult = result;
 
         Intent intent = new Intent(activity, ScanActivity.class);
-        intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, ScanConstants.OPEN_CAMERA);
+//        Uri uri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3ADownload%2Ftest.jpg");
+//        intent.putExtra("ImagePath", "/storage/emulated/0/Download/test.jpg");
+        Uri uri = Uri.parse("/storage/emulated/0/Download/test.jpg");
+        intent.putExtra("ImagePath", uri);
 
         activity.startActivityForResult(intent, ScanConstants.START_CAMERA_REQUEST_CODE);
     }

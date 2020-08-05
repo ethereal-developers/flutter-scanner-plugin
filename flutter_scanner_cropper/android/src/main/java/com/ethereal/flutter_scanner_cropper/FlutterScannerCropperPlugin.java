@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import com.scanlibrary.ScanActivity;
 import com.scanlibrary.ScanConstants;
 
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,9 +72,10 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("testMethod")) {
-      result.success("Successfully called test method!");
+      String path = getApplicationContext().getCacheDir().getPath();
+      result.success(path);
     } else if (call.method.equals("startCamera")) {
-      delegate.openCamera(result);
+        delegate.openCamera(result);
     } else {
       result.notImplemented();
     }
