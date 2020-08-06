@@ -7,4 +7,4 @@ Custom scanner and cropper plugin for OpenScan
 - [x] Make storage location compatible with already existing app
 - [ ] Unique names for temporary images
 
-ScanLibrary from - (https://github.com/jhansireddy/AndroidScannerDemo)[https://github.com/jhansireddy/AndroidScannerDemo]
+ScanLibrary from - https://github.com/jhansireddy/AndroidScannerDemo
