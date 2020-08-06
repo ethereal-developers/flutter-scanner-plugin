@@ -70,17 +70,22 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    if (call.method.equals("getPlatformVersion")) {
-      result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else if (call.method.equals("testMethod")) {
-      String path = getApplicationContext().getCacheDir().getPath();
-      result.success(path);
-    } else if (call.method.equals("startCamera")) {
+    switch (call.method) {
+      case "getPlatformVersion":
+        result.success("Android " + android.os.Build.VERSION.RELEASE);
+        break;
+      case "testMethod":
+        String path = this.getCacheDir().getPath();
+        result.success(path);
+        break;
+      case "startCamera":
         String imagePath = call.argument("path");
+        String saveLoc = call.argument("saveLoc");
         Log.d("onMethodCall", imagePath);
-        delegate.openCamera(result, imagePath);
-    } else {
-      result.notImplemented();
+        delegate.openCamera(result, imagePath, saveLoc);
+        break;
+      default:
+        result.notImplemented();
     }
   }
 

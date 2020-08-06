@@ -88,6 +88,11 @@ public class ScanFragment extends Fragment {
         return path;
     }
 
+    private String getTempPath() {
+        String path = getArguments().getString(ScanConstants.TEMP_DIR);
+        return path;
+    }
+
     private void setBitmap(Bitmap original) {
         Bitmap scaledBitmap = scaledBitmap(original, sourceFrame.getWidth(), sourceFrame.getHeight());
         sourceImageView.setImageBitmap(scaledBitmap);
@@ -149,7 +154,7 @@ public class ScanFragment extends Fragment {
         public void onClick(View v) {
             Map<Integer, PointF> points = polygonView.getPoints();
             if (isScanPointsValid(points)) {
-                new ScanAsyncTask(points).execute();
+                new ScanAsyncTask(points, getTempPath()).execute();
             } else {
                 showErrorDialog();
             }
@@ -194,9 +199,11 @@ public class ScanFragment extends Fragment {
     private class ScanAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 
         private Map<Integer, PointF> points;
+        private String path;
 
-        public ScanAsyncTask(Map<Integer, PointF> points) {
+        public ScanAsyncTask(Map<Integer, PointF> points, String path) {
             this.points = points;
+            this.path = path;
         }
 
         @Override
@@ -208,7 +215,8 @@ public class ScanFragment extends Fragment {
         @Override
         protected Bitmap doInBackground(Void... params) {
             Bitmap bitmap =  getScannedBitmap(original, points);
-            Uri uri = Utils.getUri(getActivity(), bitmap);
+            path = path + "/save.jpg";
+            String uri = Utils.getUri(bitmap, path);
             scanner.onScanFinish(uri);
             return bitmap;
         }

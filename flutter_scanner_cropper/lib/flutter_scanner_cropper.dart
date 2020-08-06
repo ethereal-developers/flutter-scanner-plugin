@@ -18,7 +18,8 @@ class FlutterScannerCropper {
 
   static Future<String> openCrop() async {
     final String res = await _channel.invokeMethod('startCamera', <String, String> {
-      'path': '/storage/emulated/0/Download/test.jpg'
+      'path': '/storage/emulated/0/Download/test.jpg',
+      'saveLoc': '/storage/emulated/0/Download/',
     });
     return res;
   }

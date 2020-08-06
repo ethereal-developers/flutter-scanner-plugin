@@ -25,6 +25,7 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
         ScanFragment fragment = new ScanFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ScanConstants.SELECTED_BITMAP, getImagePath());
+        bundle.putString(ScanConstants.TEMP_DIR, getAppDocDirPath());
         fragment.setArguments(bundle);
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -33,27 +34,22 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
     }
 
     private String getImagePath() {
-        String path = getIntent().getStringExtra("ImagePath");
+        String path = getIntent().getStringExtra(ScanConstants.IMAGE_PATH);
+        return path;
+    }
+
+    private String getAppDocDirPath() {
+        String path = getIntent().getStringExtra(ScanConstants.TEMP_DIR);
+        Log.d("onGetAppDocDirPath", path);
         return path;
     }
 
     @Override
-    public void onBitmapSelect(Uri uri) {
-        ScanFragment fragment = new ScanFragment();
-        Bundle bundle = new Bundle();
-        bundle.putParcelable(ScanConstants.SELECTED_BITMAP, uri);
-        fragment.setArguments(bundle);
-        android.app.FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.content, fragment);
-        fragmentTransaction.commit();
-    }
-
-    @Override
-    public void onScanFinish(Uri uri) {
+    public void onScanFinish(String path) {
         ResultFragment fragment = new ResultFragment();
         Bundle bundle = new Bundle();
-        bundle.putParcelable(ScanConstants.SCANNED_RESULT, uri);
+        bundle.putString(ScanConstants.SCANNED_RESULT, path);
+        bundle.putString(ScanConstants.TEMP_DIR, getAppDocDirPath());
         fragment.setArguments(bundle);
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

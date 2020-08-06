@@ -5,9 +5,11 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,26 +56,20 @@ public class ResultFragment extends Fragment {
         bwButton = (Button) view.findViewById(R.id.BWMode);
         bwButton.setOnClickListener(new BWButtonClickListener());
         Bitmap bitmap = getBitmap();
+        original = bitmap;
         setScannedImage(bitmap);
         doneButton = (Button) view.findViewById(R.id.doneButton);
         doneButton.setOnClickListener(new DoneButtonClickListener());
     }
 
     private Bitmap getBitmap() {
-        Uri uri = getUri();
-        try {
-            original = Utils.getBitmap(getActivity(), uri);
-            getActivity().getContentResolver().delete(uri, null, null);
-            return original;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        Bitmap bitmap = BitmapFactory.decodeFile(getPath());
+        return bitmap;
     }
 
-    private Uri getUri() {
-        Uri uri = getArguments().getParcelable(ScanConstants.SCANNED_RESULT);
-        return uri;
+    private String getPath() {
+        String path = getArguments().getString(ScanConstants.SCANNED_RESULT);
+        return path;
     }
 
     public void setScannedImage(Bitmap scannedImage) {
@@ -93,7 +89,8 @@ public class ResultFragment extends Fragment {
                         if (bitmap == null) {
                             bitmap = original;
                         }
-                        Uri uri = Utils.getUri(getActivity(), bitmap);
+                        String uri = Utils.getUri(bitmap, getPath());
+                        Log.d("onDoneButtonClickUri", uri);
                         data.putExtra(ScanConstants.SCANNED_RESULT, uri);
                         getActivity().setResult(Activity.RESULT_OK, data);
                         original.recycle();
