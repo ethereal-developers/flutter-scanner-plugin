@@ -49,6 +49,11 @@ android {
     }
 }
 
+dependencies {
+    implementation project(path: ':flutter_scanner_cropper')
+    implementation project(path: ':scanlibrary')
+}
+
 flutter {
     source '../..'
 }
