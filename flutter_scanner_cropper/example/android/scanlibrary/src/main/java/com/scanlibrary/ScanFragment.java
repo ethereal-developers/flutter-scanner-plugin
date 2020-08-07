@@ -9,6 +9,7 @@ import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
+import android.icu.text.DateTimePatternGenerator;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -215,7 +216,7 @@ public class ScanFragment extends Fragment {
         @Override
         protected Bitmap doInBackground(Void... params) {
             Bitmap bitmap =  getScannedBitmap(original, points);
-            path = path + "/save.jpg";
+            path = String.format("%s/%d.jpg", path, System.currentTimeMillis() / 1000);
             String uri = Utils.getUri(bitmap, path);
             scanner.onScanFinish(uri);
             return bitmap;

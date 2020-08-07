@@ -1,27 +1,9 @@
 package com.ethereal.flutter_scanner_cropper;
 
-import android.Manifest;
 import android.app.Activity;
-import android.app.ActivityOptions;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import com.scanlibrary.ScanActivity;
-import com.scanlibrary.ScanConstants;
-
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import io.flutter.app.FlutterActivity;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -31,9 +13,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
-
-import static androidx.core.app.ActivityCompat.requestPermissions;
 
 /** FlutterScannerCropperPlugin */
 public class FlutterScannerCropperPlugin extends FlutterActivity implements FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -75,12 +54,12 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
         result.success("Android " + android.os.Build.VERSION.RELEASE);
         break;
       case "testMethod":
-        String path = this.getCacheDir().getPath();
+        String path = this.getApplicationContext().getCacheDir().getPath();
         result.success(path);
         break;
       case "startCamera":
-        String imagePath = call.argument("path");
-        String saveLoc = call.argument("saveLoc");
+        String imagePath = call.argument("src");
+        String saveLoc = call.argument("dest");
         Log.d("onMethodCall", imagePath);
         delegate.openCamera(result, imagePath, saveLoc);
         break;
@@ -92,7 +71,6 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
 //  -----------------------------------
 
   private ScannerCropperDelegate delegate;
-  private ActivityPluginBinding binding;
 
 //  -----------------------------------
 
@@ -109,7 +87,6 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
   @Override
   public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
     setupActivity(binding.getActivity());
-    this.binding = binding;
     binding.addActivityResultListener(delegate);
 //    checkPermission();
   }

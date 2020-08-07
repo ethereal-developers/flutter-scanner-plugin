@@ -30,6 +30,7 @@ import io.flutter.util.PathUtils;
 public class ScannerCropperDelegate implements PluginRegistry.ActivityResultListener {
     private static final int REQUEST_CODE = 99;
     private final Activity activity;
+    private MethodChannel.Result result;
 
     public ScannerCropperDelegate(Activity activity) {
         this.activity = activity;
@@ -37,6 +38,7 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
 
     public void openCamera(MethodChannel.Result result, String imgPath, String tempSavePath) {
         String appDocDir = tempSavePath;
+        this.result = result;
         if (tempSavePath == null) {
             appDocDir = "/storage/emulated/0/Download/";
         }
@@ -44,7 +46,7 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
         intent.putExtra(ScanConstants.IMAGE_PATH, imgPath);
         intent.putExtra(ScanConstants.TEMP_DIR, appDocDir);
 
-        activity.startActivityForResult(intent, ScanConstants.START_CAMERA_REQUEST_CODE);
+        activity.startActivityForResult(intent, REQUEST_CODE);
     }
 
     @Override
@@ -52,21 +54,24 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             String uri = data.getStringExtra(ScanConstants.SCANNED_RESULT);
             Log.d("afterEverythingComplete", uri);
-            Bitmap bitmap = null;
-            try {
-                bitmap = BitmapFactory.decodeFile(uri);
-                File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/save.jpg");
-                FileOutputStream outStream = new FileOutputStream(file);
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-                outStream.flush();
-                outStream.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
-            Toast.makeText(activity, "Image is Sucessfully Created and Saved !", Toast.LENGTH_LONG).show();
+//            Bitmap bitmap = null;
+//            try {
+//                bitmap = BitmapFactory.decodeFile(uri);
+//                File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/save.jpg");
+//                FileOutputStream outStream = new FileOutputStream(file);
+//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
+//                outStream.flush();
+//                outStream.close();
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+
+//            Toast.makeText(activity, "Image is Successfully Created and Saved !", Toast.LENGTH_LONG).show();
+
+            result.success(uri);
             return false;
         }
         return true;

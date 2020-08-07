@@ -4,42 +4,23 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a944a13b-cb57-47d3-b90d-27b8a29d7c50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ethereal/flutter_scanner_cropper/FlutterScannerCropperPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/ethereal/flutter_scanner_cropper/FlutterScannerCropperPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ethereal/flutter_scanner_cropper/ScannerCropperDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/ethereal/flutter_scanner_cropper/ScannerCropperDelegate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/IScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/IScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/PickImageFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ResultFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ResultFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ScanActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ScanActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ScanConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ScanConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ScanFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/ScanFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/src/main/java/com/scanlibrary/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/res/layout/pick_image_fragment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_scanner_cropper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_scanner_cropper.dart" afterDir="false" />
-    </list>
+    <list default="true" id="a944a13b-cb57-47d3-b90d-27b8a29d7c50" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_29" />
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
   <component name="ProjectId" id="1fPC0lRTGBvu8N6IJr0549QvQ30" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Git/Organizations/Ethereal Developers Inc/flutter-scanner-plugin/flutter_scanner_cropper" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -64,30 +45,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="624" y="178" key="AndroidProcessChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1596637852452" />
-    <state width="1491" height="267" key="GridCell.Tab.0.bottom" timestamp="1596727874711">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1596727639619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="267" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596727874711" />
-    <state width="1491" height="267" key="GridCell.Tab.0.center" timestamp="1596727874710">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596727639619" />
+    <state width="1491" height="297" key="GridCell.Tab.0.bottom" timestamp="1596777249936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="267" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596727874710" />
-    <state width="1491" height="267" key="GridCell.Tab.0.left" timestamp="1596727874710">
+    <state width="1491" height="297" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596777249936" />
+    <state width="1491" height="297" key="GridCell.Tab.0.center" timestamp="1596777249936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="267" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596727874710" />
-    <state width="1491" height="267" key="GridCell.Tab.0.right" timestamp="1596727874710">
+    <state width="1491" height="297" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596777249936" />
+    <state width="1491" height="297" key="GridCell.Tab.0.left" timestamp="1596777249936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="267" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596727874710" />
+    <state width="1491" height="297" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596777249936" />
+    <state width="1491" height="297" key="GridCell.Tab.0.right" timestamp="1596777249936">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="297" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596777249936" />
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596278542276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1596278542276" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1596625892505">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1596774938824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596625892505" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596774938824" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1596206029035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
