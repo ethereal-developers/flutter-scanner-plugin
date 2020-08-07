@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 include ':app'
+include ':flutter_scanner_cropper'
 include ':scanlibrary'
 
 def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
