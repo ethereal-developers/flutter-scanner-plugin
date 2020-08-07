@@ -57,3 +57,7 @@ dependencies {
 flutter {
     source '../..'
 }
+
+subprojects {
+    project.evauationDependsOn(':app')
+}
