@@ -1,8 +1,7 @@
 name: flutter_scanner_cropper
 description: Custom scanner and cropper plugin for the OpenScan app.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/Ethereal-Developers-Inc/flutter-scanner-plugin/tree/master/flutter_scanner_cropper
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
