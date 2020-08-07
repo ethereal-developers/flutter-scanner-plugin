@@ -1,2 +1,4 @@
 rootProject.name = 'flutter_scanner_cropper'
 include ':scanlibrary'
+
+project(':scanlibrary').projectDir = file('android/scanlibrary')
