@@ -6,13 +6,158 @@
   <component name="ChangeListManager">
     <list default="true" id="a944a13b-cb57-47d3-b90d-27b8a29d7c50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ethereal/flutter_scanner_cropper/FileUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/lint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/aidl/org/opencv/engine/OpenCVEngineInterface.aidl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/AsyncServiceHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/BaseLoaderCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/Camera2Renderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/CameraBridgeViewBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/CameraGLRendererBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/CameraGLSurfaceView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/CameraRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/FpsMeter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/InstallCallbackInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/JavaCamera2View.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/JavaCameraView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/LoaderCallbackInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/OpenCVLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/StaticHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/android/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/calib3d/Calib3d.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/calib3d/StereoBM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/calib3d/StereoMatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/calib3d/StereoSGBM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Algorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/CvException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/CvType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/DMatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/KeyPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Mat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfByte.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfDMatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfDouble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfFloat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfFloat4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfFloat6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfInt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfInt4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfKeyPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfPoint2f.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfPoint3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfPoint3f.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfRect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfRect2d.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/MatOfRotatedRect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Point3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Range.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Rect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Rect2d.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/RotatedRect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Scalar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/Size.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/TermCriteria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/core/TickMeter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/dnn/DictValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/dnn/Dnn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/dnn/Layer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/dnn/Net.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/AKAZE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/AgastFeatureDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/BFMatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/BOWImgDescriptorExtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/BOWKMeansTrainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/BOWTrainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/BRISK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/DescriptorExtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/DescriptorMatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/FastFeatureDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/Feature2D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/FeatureDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/Features2d.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/FlannBasedMatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/GFTTDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/KAZE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/MSER.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/ORB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/Params.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/features2d/SimpleBlobDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgcodecs/Imgcodecs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/CLAHE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/GeneralizedHough.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/GeneralizedHoughBallard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/GeneralizedHoughGuil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/Imgproc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/LineSegmentDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/Moments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/imgproc/Subdiv2D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/ANN_MLP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/ANN_MLP_ANNEAL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/Boost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/DTrees.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/EM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/KNearest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/LogisticRegression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/Ml.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/NormalBayesClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/ParamGrid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/RTrees.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/SVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/SVMSGD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/StatModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/ml/TrainData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/objdetect/BaseCascadeClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/objdetect/CascadeClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/objdetect/HOGDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/objdetect/Objdetect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/objdetect/QRCodeDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/osgi/OpenCVInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/osgi/OpenCVNativeLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/AlignExposures.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/AlignMTB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/CalibrateCRF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/CalibrateDebevec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/CalibrateRobertson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/MergeDebevec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/MergeExposures.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/MergeMertens.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/MergeRobertson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/Photo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/Tonemap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/TonemapDrago.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/TonemapMantiuk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/photo/TonemapReinhard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/utils/Converters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/BackgroundSubtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/BackgroundSubtractorKNN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/BackgroundSubtractorMOG2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/DenseOpticalFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/DualTVL1OpticalFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/FarnebackOpticalFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/KalmanFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/SparseOpticalFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/SparsePyrLKOpticalFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/video/Video.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/videoio/VideoCapture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/videoio/VideoWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/java/org/opencv/videoio/Videoio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/openCVLibrary3410/src/main/res/values/attrs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/scanlibrary/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/scanlibrary/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_29" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
