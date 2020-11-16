@@ -14,6 +14,14 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 /** FlutterScannerCropperPlugin */
 public class FlutterScannerCropperPlugin extends FlutterActivity implements FlutterPlugin, MethodCallHandler, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
@@ -53,16 +61,33 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
       case "getPlatformVersion":
         result.success("Android " + android.os.Build.VERSION.RELEASE);
         break;
-      case "testMethod":
-        String path = this.getApplicationContext().getCacheDir().getPath();
-        result.success(path);
-        break;
       case "startCamera":
         String imagePath = call.argument("src");
         String saveLoc = call.argument("dest");
         Log.d("onMethodCall", imagePath);
         delegate.openCamera(result, imagePath, saveLoc);
         break;
+      case "compress":
+        String qualString = call.argument("desiredQuality");
+        int desiredQuality = Integer.parseInt(qualString);
+        String path = call.argument("src");
+        String savePath = call.argument("dest");
+        String fileName = String.format("%s/%d.jpg", savePath, System.currentTimeMillis() / 1000);
+        // Log.d("onCompressMethodCall", String.valueOf(percentage));
+        File file = null;
+        try {
+          file = new File(savePath);
+          FileOutputStream outStream = new FileOutputStream(file);
+          Bitmap bitmap = BitmapFactory.decodeFile(path);
+          bitmap.compress(Bitmap.CompressFormat.JPEG, desiredQuality, outStream);
+          outStream.flush();
+          outStream.close();
+          result.success(file.getPath());
+        } catch (FileNotFoundException e) {
+          e.printStackTrace();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
       default:
         result.notImplemented();
     }

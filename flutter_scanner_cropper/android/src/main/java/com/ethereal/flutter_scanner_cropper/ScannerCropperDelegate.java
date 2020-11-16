@@ -54,23 +54,6 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             String uri = data.getStringExtra(ScanConstants.SCANNED_RESULT);
             Log.d("afterEverythingComplete", uri);
-
-//            Bitmap bitmap = null;
-//            try {
-//                bitmap = BitmapFactory.decodeFile(uri);
-//                File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/save.jpg");
-//                FileOutputStream outStream = new FileOutputStream(file);
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-//                outStream.flush();
-//                outStream.close();
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-
-//            Toast.makeText(activity, "Image is Successfully Created and Saved !", Toast.LENGTH_LONG).show();
-
             result.success(uri);
             return false;
         }

@@ -11,13 +11,18 @@ class FlutterScannerCropper {
     return version;
   }
 
-  static Future<String> get testMethod async {
-    final String res = await _channel.invokeMethod('testMethod');
+  static Future<String> openCrop(Map<String, String> path) async {
+    final String res = await _channel.invokeMethod('startCamera', path);
     return res;
   }
 
-  static Future<String> openCrop(Map<String, String> path) async {
-    final String res = await _channel.invokeMethod('startCamera', path);
+  static Future<String> compressImage(
+      {String src, String dest, int desiredQuality}) async {
+    final String res = await _channel.invokeMethod('compress', {
+      'src': src,
+      'dest': dest,
+      'desiredQuality': '$desiredQuality',
+    });
     return res;
   }
 }

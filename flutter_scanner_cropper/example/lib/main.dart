@@ -28,8 +28,6 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await FlutterScannerCropper.platformVersion;
-      String willItWork = await FlutterScannerCropper.testMethod;
-      print('Testing whether it will work: $willItWork');
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -59,17 +57,19 @@ class _MyAppState extends State<MyApp> {
             RaisedButton(
               child: Text('Crop'),
               onPressed: () async {
-                String pathToCroppedImage = await FlutterScannerCropper.openCrop(<String, String> {
+                String pathToCroppedImage =
+                    await FlutterScannerCropper.openCrop(<String, String>{
                   'src': '/storage/emulated/0/Download/test.jpg',
                   'dest': '/storage/emulated/0/Download/',
                 });
-                print("\n\n\n\n\nResult from plugin which gives path to save file");
+                print(
+                    "\n\n\n\n\nResult from plugin which gives path to save file");
                 print(pathToCroppedImage);
               },
             ),
           ],
         ),
-        ),
+      ),
     );
   }
 }
