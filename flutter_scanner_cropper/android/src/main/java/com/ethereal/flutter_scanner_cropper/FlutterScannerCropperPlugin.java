@@ -88,6 +88,7 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
         } catch (IOException e) {
           e.printStackTrace();
         }
+        break;
       default:
         result.notImplemented();
     }
