@@ -76,7 +76,7 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
         // Log.d("onCompressMethodCall", String.valueOf(percentage));
         File file = null;
         try {
-          file = new File(savePath);
+          file = new File(fileName);
           FileOutputStream outStream = new FileOutputStream(file);
           Bitmap bitmap = BitmapFactory.decodeFile(path);
           bitmap.compress(Bitmap.CompressFormat.JPEG, desiredQuality, outStream);
