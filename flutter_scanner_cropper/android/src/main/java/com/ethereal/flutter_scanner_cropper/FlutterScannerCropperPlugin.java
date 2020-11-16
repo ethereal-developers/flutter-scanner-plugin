@@ -72,7 +72,7 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
         int desiredQuality = Integer.parseInt(qualString);
         String path = call.argument("src");
         String savePath = call.argument("dest");
-        String fileName = String.format("%s/%d.jpg", savePath, System.currentTimeMillis() / 1000);
+        String fileName = String.format("%s/%d.jpg", savePath, System.currentTimeMillis());
         // Log.d("onCompressMethodCall", String.valueOf(percentage));
         File file = null;
         try {
