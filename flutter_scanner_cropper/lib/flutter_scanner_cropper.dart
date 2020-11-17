@@ -11,7 +11,16 @@ class FlutterScannerCropper {
     return version;
   }
 
-  static Future<String> openCrop(Map<String, String> path) async {
+  static Future<String> openCrop({
+    String src,
+    String dest,
+    bool shouldCompress = false,
+  }) async {
+    Map<String, String> path = {
+      'src': src,
+      'dest': dest,
+      'shouldCompress': '$shouldCompress'
+    };
     final String res = await _channel.invokeMethod('startCamera', path);
     return res;
   }

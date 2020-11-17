@@ -9,8 +9,7 @@ import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
-import android.icu.text.DateTimePatternGenerator;
-import android.net.Uri;
+import android.media.ExifInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -79,11 +78,37 @@ public class ScanFragment extends Fragment {
             public void run() {
                 original = getBitmap();
                 if (original != null) {
+//                    FROM PR IN UPSTREAM REPO https://github.com/RoyleKoonlert/AndroidScannerDemo/commit/910f03f2ee057bcc97e169d7d74b3dcfea9b8925#diff-47996f6b952750159d5f6658a818552dd483c5968478fcd2aab4f1c55ae76dfc
+                    Matrix matrix = new Matrix();
+
+                    ExifInterface exif = null;     //Since API Level 5
+                    try {
+                        exif = new ExifInterface(getPath());
+                        int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+                        int rotationInDegrees = exifToDegrees(rotation);
+                        if (rotation != 0f) {
+                            matrix.preRotate(rotationInDegrees);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    original = Bitmap.createBitmap(original, 0, 0, original.getWidth(), original.getHeight(), matrix, true);
+
                     setBitmap(original);
-                    rotateImage(90);
                 }
             }
         });
+    }
+
+    private static int exifToDegrees(int exifOrientation) {
+        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
+            return 90;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
+            return 180;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
+            return 270;
+        }
+        return 0;
     }
 
     private Bitmap getBitmap() {
@@ -103,6 +128,7 @@ public class ScanFragment extends Fragment {
 
     private void setBitmap(Bitmap original) {
         Bitmap scaledBitmap = scaledBitmap(original, sourceFrame.getWidth(), sourceFrame.getHeight());
+        this.original = scaledBitmap;
         sourceImageView.setImageBitmap(scaledBitmap);
         Bitmap tempBitmap = ((BitmapDrawable) sourceImageView.getDrawable()).getBitmap();
         Map<Integer, PointF> pointFs = getEdgePoints(tempBitmap);
@@ -245,7 +271,7 @@ public class ScanFragment extends Fragment {
         protected Bitmap doInBackground(Void... params) {
             Bitmap bitmap =  getScannedBitmap(original, points);
             path = String.format("%s/%d.jpg", path, System.currentTimeMillis() / 1000);
-            String uri = Utils.getUri(bitmap, path);
+            String uri = Utils.getUri(bitmap, path, false);
             scanner.onScanFinish(uri);
             return bitmap;
         }

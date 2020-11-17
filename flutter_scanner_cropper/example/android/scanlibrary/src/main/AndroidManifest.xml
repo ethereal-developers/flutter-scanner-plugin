@@ -9,7 +9,8 @@
         android:hardwareAccelerated="true" >
         <activity
             android:name=".ScanActivity"
-            android:configChanges="orientation|screenSize" >
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

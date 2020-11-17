@@ -58,10 +58,10 @@ class _MyAppState extends State<MyApp> {
               child: Text('Crop'),
               onPressed: () async {
                 String pathToCroppedImage =
-                    await FlutterScannerCropper.openCrop(<String, String>{
-                  'src': '/storage/emulated/0/Download/test.jpg',
-                  'dest': '/storage/emulated/0/Download/',
-                });
+                    await FlutterScannerCropper.openCrop(
+                  src: '/storage/emulated/0/Download/test.jpg',
+                  dest: '/storage/emulated/0/Download/',
+                );
                 print(
                     "\n\n\n\n\nResult from plugin which gives path to save file");
                 print(pathToCroppedImage);
