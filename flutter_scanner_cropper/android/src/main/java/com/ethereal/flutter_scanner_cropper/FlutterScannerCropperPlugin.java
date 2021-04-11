@@ -64,9 +64,8 @@ public class FlutterScannerCropperPlugin extends FlutterActivity implements Flut
       case "startCamera":
         String imagePath = call.argument("src");
         String saveLoc = call.argument("dest");
-        String shouldCompress = call.argument("shouldCompress");
         Log.d("onMethodCall", imagePath);
-        delegate.openCamera(result, imagePath, saveLoc, shouldCompress);
+        delegate.openCamera(result, imagePath, saveLoc);
         break;
       case "compress":
         String qualString = call.argument("desiredQuality");

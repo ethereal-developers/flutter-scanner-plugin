@@ -36,7 +36,7 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
         this.activity = activity;
     }
 
-    public void openCamera(MethodChannel.Result result, String imgPath, String tempSavePath, String shouldCompress) {
+    public void openCamera(MethodChannel.Result result, String imgPath, String tempSavePath) {
         String appDocDir = tempSavePath;
         this.result = result;
         if (tempSavePath == null) {
@@ -45,7 +45,6 @@ public class ScannerCropperDelegate implements PluginRegistry.ActivityResultList
         Intent intent = new Intent(activity, ScanActivity.class);
         intent.putExtra(ScanConstants.IMAGE_PATH, imgPath);
         intent.putExtra(ScanConstants.TEMP_DIR, appDocDir);
-        intent.putExtra(ScanConstants.SHOULD_COMPRESS, shouldCompress);
 
         activity.startActivityForResult(intent, REQUEST_CODE);
     }
