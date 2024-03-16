@@ -4,8 +4,7 @@ version: 0.0.1
 homepage: https://github.com/Ethereal-Developers-Inc/flutter-scanner-plugin/tree/master/flutter_scanner_cropper
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.10.0"
+  sdk: ">=3.2.4 <4.0.0"
 
 dependencies:
   flutter:
