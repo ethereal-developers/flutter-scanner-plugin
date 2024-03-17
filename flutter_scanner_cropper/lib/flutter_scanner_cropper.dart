@@ -12,8 +12,8 @@ class FlutterScannerCropper {
   }
 
   static Future<String> openCrop({
-    String src,
-    String dest,
+    required String src,
+    required String dest,
     bool shouldCompress = false,
   }) async {
     Map<String, String> path = {
@@ -26,7 +26,7 @@ class FlutterScannerCropper {
   }
 
   static Future<String> compressImage(
-      {String src, String dest, int desiredQuality}) async {
+      {required String src, required String dest, required int desiredQuality}) async {
     final String res = await _channel.invokeMethod('compress', {
       'src': src,
       'dest': dest,
